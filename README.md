@@ -1,68 +1,86 @@
 <div align="center">
 
-# 🤖 MiR250 · Safety 4.0 Lab Çalışmaları
-
-**Otonom mobil robotun (AMR) siber güvenlik ve emniyet analizi**
+# MiR250 Otonom Mobil Robot — CE ve Siber Güvenlik İncelemesi
 
 ![Makine](https://img.shields.io/badge/Makine-MiR250_AMR-1a9e96?style=for-the-badge)
 ![Konu](https://img.shields.io/badge/Konu-Safety_%2B_Cyber_Security-1b2f48?style=for-the-badge)
 ![Standart](https://img.shields.io/badge/Standart-IEC_62443-e3582f?style=for-the-badge)
 ![Durum](https://img.shields.io/badge/LAB_1--4-Tamamlandı-0f7c78?style=for-the-badge)
 
-Yazılım Mühendisliği Güncel Konular dersi · **Betül Altunyuva** · Gece-B
-
 </div>
+
+**Ders:** Yazılım Mühendisliği Güncel Konular
+**Hazırlayan:** Betül Altunyuva · Gece-B
+**Tarih:** 23.10.2026
+**Durum:** LAB 1–4, rapor, SWOT ve SMART analizleri tamamlandı. LAB 5–7 henüz eklenmedi.
 
 ---
 
-## 📌 Proje özeti
+## Projenin amacı
 
-Bu çalışmada **Mobile Industrial Robots (MiR) / MiR250 Otonom Mobil Robot (AMR – Fabrika İçi Malzeme Taşıma)** için Safety 4.0 laboratuvarlarının ilk dört haftası uygulandı. Amaç, makinenin bir CE dosyasına girecek siber güvenlik bölümünü kendi çapımızda hazırlamak: hangi emniyet fonksiyonu korunuyor, hangi kapılardan girilebilir, hangi risk önce ele alınmalı ve nasıl korunulur.
+Bu çalışma, **Mobile Industrial Robots (MiR) / MiR250 Otonom Mobil Robot (AMR – Fabrika İçi Malzeme Taşıma)** için bir CE teknik dosyasının siber güvenlik bölümünü eğitim amaçlı hazırlamayı hedefler: hangi emniyet fonksiyonu korunuyor, hangi kapılardan girilebilir, hangi risk önce ele alınmalı ve nasıl korunulur.
 
-MiR250 seçildi çünkü **teknik dokümanı herkese açık** ve **bilinen açıkları yayımlanmış** (CISA ICSA-21-280-02). Bu sayede LAB'lardaki senaryolar gerçek CVE'lere dayanıyor.
+> Bu depo **gerçek bir CE belgesi, belgelendirme veya emniyet garantisi değildir.** Kamuya açık dokümanlara dayanan bir eğitim çıktısıdır. Ayrıntı için [PROJE_KAPSAMI.md](PROJE_KAPSAMI.md).
+
+---
+
+## İçerik
+
+```
+├── docs/
+│   ├── sisleme/      Lab1 · Lab2 · Lab3 · Lab4
+│   ├── paketleme/    Lab1 · Lab2 · Lab3 · Lab4
+│   └── rapor/        ayrıntılı rapor
+├── analizler/        SWOT ve SMART analizleri
+├── kaynaklar/        kaynak listesi ve CVE kaydı
+├── PROJE_KAPSAMI.md
+└── HAFTALIK_ILERLEME.md
+```
+
+| Dosya | Açıklama |
+| --- | --- |
+| [docs/sisleme/](docs/sisleme) | Şişeleme föyü: LAB 1–4, MiR250'ye göre doldurulmuş, her lab ayrı PDF |
+| [docs/paketleme/](docs/paketleme) | Paketleme (PaketPro 3000) föyü: LAB 1–4, MiR250'ye göre doldurulmuş, her lab ayrı PDF |
+| [docs/rapor/MiR250_Safety40_Lab_Raporu_LAB1-4.pdf](docs/rapor/MiR250_Safety40_Lab_Raporu_LAB1-4.pdf) | Makine tanımı, bileşen listesi ve LAB 1–4 ayrıntılı rapor |
+| [analizler/SWOT_Analizi.md](analizler/SWOT_Analizi.md) | SWOT analizi ([PDF sürümü](analizler/SWOT_Analizi_MiR250_BetulAltunyuva.pdf)) |
+| [analizler/SMART_Analizi.md](analizler/SMART_Analizi.md) | SMART hedef analizi, iş paketleri ve izleme göstergeleri |
+| [kaynaklar/Kaynaklar.md](kaynaklar/Kaynaklar.md) | Kaynaklar, doğrulama durumları ve CVE değerlendirme kaydı |
+| [PROJE_KAPSAMI.md](PROJE_KAPSAMI.md) | Kapsam, veri sınıflandırması, teknik dosya taslağı bölümleri |
+| [HAFTALIK_ILERLEME.md](HAFTALIK_ILERLEME.md) | Haftalık ilerleme tablosu ve güncelleme kuralı |
+
+---
+
+## İncelenen makine
 
 | | |
 | --- | --- |
-| **Ağırlık / Yük** | 97 kg / en fazla 250 kg |
+| **Üretici / model** | Mobile Industrial Robots A/S · MiR250 |
+| **Makine türü** | Otonom mobil robot (AMR), fabrika içi malzeme taşıma |
+| **Ağırlık / yük** | 97 kg / en fazla 250 kg |
 | **Azami hız** | 2,0 m/s (7,2 km/h) |
 | **Emniyet donanımı** | 2 × SICK nanoScan3 lazer tarayıcı (360°) + SICK emniyet kontrolcüsü |
 | **Ağ** | Wi-Fi (2,4 / 5 GHz), Ethernet, web arayüzü (port 80), MiR Fleet |
 | **Kullanım ortamı** | Yalnızca kapalı alan, IP21 |
+| **Bilinmeyenler** | Robotun gerçek yazılım sürümü ve parola durumu; emniyet fonksiyonlarının üretici PL beyanı |
 
 ---
 
-## 📂 Depo içeriği
+## Güvenlik açığı incelemesi
 
-```
-lab-mir250/
-├── foyler/
-│   ├── sisleme/      Lab1 · Lab2 · Lab3 · Lab4
-│   └── paketleme/    Lab1 · Lab2 · Lab3 · Lab4
-├── rapor/            ayrıntılı rapor
-└── swot/             SWOT analizi
-```
+CISA ICSA-21-280-02, MiR250'yi de kapsayan bir dizi açık listeler (yazılım 2.10.2.1 öncesi). Bu çalışmada özellikle şunlar kullanıldı:
 
-### Föyler
-
-Her föy MiR250'ye göre doldurulmuş ve laboratuvar başına ayrı PDF'tir. Yeni laboratuvarlar geldikçe aynı klasörlere eklenecek.
-
-| Laboratuvar | Şişeleme föyü | Paketleme (PaketPro 3000) föyü |
+| CVE | Konu | Kaynak |
 | --- | --- | --- |
-| **LAB 1** · Safety Architecture | [PDF](foyler/sisleme/Lab1_Sisleme_MiR250_BetulAltunyuva.pdf) | [PDF](foyler/paketleme/Lab1_Paketleme_MiR250_BetulAltunyuva.pdf) |
-| **LAB 2** · IEC 62443 Mini Workshop | [PDF](foyler/sisleme/Lab2_Sisleme_MiR250_BetulAltunyuva.pdf) | [PDF](foyler/paketleme/Lab2_Paketleme_MiR250_BetulAltunyuva.pdf) |
-| **LAB 3** · Threat & Risk + Risk Matrix | [PDF](foyler/sisleme/Lab3_Sisleme_MiR250_BetulAltunyuva.pdf) | [PDF](foyler/paketleme/Lab3_Paketleme_MiR250_BetulAltunyuva.pdf) |
-| **LAB 4** · Secure Remote Access | [PDF](foyler/sisleme/Lab4_Sisleme_MiR250_BetulAltunyuva.pdf) | [PDF](foyler/paketleme/Lab4_Paketleme_MiR250_BetulAltunyuva.pdf) |
+| CVE-2020-10276 | Emniyet kontrolcüsünde varsayılan parola (Haziran 2020 öncesi robotlar) | CISA, CVSS 8,8 |
+| CVE-2020-10271 / 10272 | ROS arayüzü kimlik doğrulamasız | CISA, CVSS 9,8 / 8,8 |
+| CVE-2020-10277 / 10278 | USB'den açılış açık, BIOS parolası yok | CISA, CVSS 6,4 / 4,6 |
+| CVE-2020-10269 / 10270 | Varsayılan Wi-Fi ve panel parolaları | Araştırmacı bildirimi; **MiR250 için etki doğrulanmadı** |
 
-### Diğer belgeler
-
-| Klasör | Dosya | Açıklama |
-| --- | --- | --- |
-| [`rapor/`](rapor) | [Ayrıntılı rapor (PDF)](rapor/MiR250_Safety40_Lab_Raporu_LAB1-4.pdf) | Makine tanımı, bileşen listesi ve LAB 1–4 |
-| [`swot/`](swot) | [SWOT analizi (PDF)](swot/SWOT_Analizi_MiR250_BetulAltunyuva.pdf) | Aşağıda özeti de var |
+> Bu tablo, incelenen robotun savunmasız olduğunu **kanıtlamaz**. Uygulanabilirlik için robotun sürümü, sevk tarihi ve parola durumu gerekir. Kayıt: [kaynaklar/Kaynaklar.md](kaynaklar/Kaynaklar.md).
 
 ---
 
-## 🧪 Laboratuvarlar
+## Laboratuvar özeti
 
 | Lab | Konu | Çıktı | Evidence Pack |
 | --- | --- | --- | --- |
@@ -71,18 +89,7 @@ Her föy MiR250'ye göre doldurulmuş ve laboratuvar başına ayrı PDF'tir. Yen
 | **LAB 3** | Threat & Risk + Risk Matrix | Risk Register | EP 04 |
 | **LAB 4** | Secure Remote Access | Secure Architecture | EP 02, EP 06 |
 
-### LAB 1 · Emniyet fonksiyonları
-
-| Kod | Emniyet fonksiyonu | Ne yapar |
-| --- | --- | --- |
-| SF-1 | İnsan algılama | Koruma alanında biri görülürse robot durur |
-| SF-2 | Acil durdurma | Butona basılınca robot durur |
-| SF-3 | Aşırı hız önleme | Robot emniyet hız sınırını aşamaz |
-| SF-4 | Hıza bağlı alan değişimi | Hız arttıkça koruma alanı büyür |
-
-Güvenli durum: motor gücü kesilmiş, frenler devrede, robot durmuş. Hedeflenen güvenilirlik **PL d** (üretici beyanı kılavuzdan doğrulanmalıdır).
-
-### LAB 2 · Zone / Conduit
+### Zone / Conduit
 
 ```mermaid
 flowchart TB
@@ -95,9 +102,7 @@ flowchart TB
     style NET fill:#fdf0e6,stroke:#e3582f
 ```
 
-Emniyet kontrolcüsü ayrı ve en kritik bölgeye (**Z4**) konur; robot bilgisayarı ele geçirilse bile emniyet ayarlarına ağ üzerinden ulaşılamamalıdır.
-
-### LAB 3 · Risk Register
+### Risk Register (LAB 3)
 
 | # | Senaryo | L | S | E | Skor | Bant |
 | --- | --- | :-: | :-: | :-: | :-: | --- |
@@ -105,49 +110,51 @@ Emniyet kontrolcüsü ayrı ve en kritik bölgeye (**Z4**) konur; robot bilgisay
 | **R-02** | Meraklı içeriden → paylaşılan web hesabı → gereksiz susturma bölgesi → raf ile robot arasında ezilme | 2 | 3 | 2 | **12** | 🟠 Yüksek · S3 |
 | **R-03** | Tedarik zinciri → servis erişimi → hatalı harita dosyası → yasak bölge kalkar, çarpma | 2 | 3 | 1 | **6** | 🟡 Orta · S3 |
 
-> **S3 kuralı:** Şiddeti 3 olan senaryo, skoru düşük olsa bile ayrı bayrak alır ve en az bir önlem ya da yazılı kabul kararı olmadan kapatılmaz.
-
-### LAB 4 · Güvenli uzak erişim
-
-| Mevcut | Hedef |
-| --- | --- |
-| Robot ve Fleet'e doğrudan erişim | **Jump server** üzerinden erişim |
-| Varsayılan, paylaşılan parolalar | **Kişisel hesap** |
-| Tek faktör | **MFA** |
-| Servis erişimi sürekli açık | **Varsayılan kapalı**, süreli açılır |
-| Kim ne yaptı bilinmiyor | **Tam oturum kaydı** |
-
-**R-01 riskinin değişimi:**
-
-| Durum | L · S · E | Skor | Bant |
-| --- | :-: | :-: | --- |
-| Bugün | 3 · 3 · 3 | 27 | 🔴 Kritik |
-| + Erişim önlemleri | 1 · 3 · 2 | 6 | 🟡 Orta (S3 sürer) |
-| + Emniyet bağımsızlığı | 1 · 1 · 2 | 2 | ⚪ Düşük |
-
-> Erişim önlemleri **L ve E**'yi düşürür; **S**'yi yalnızca emniyet tasarımı düşürür.
+R-01 için LAB 4 sonrası: erişim önlemleriyle **6**, emniyet bağımsızlığıyla **2** (Düşük). Erişim önlemleri L ve E'yi düşürür; S'yi yalnızca emniyet tasarımı düşürür.
 
 ---
 
-## 🧭 SWOT analizi
+## SWOT özeti
 
-| 💪 **Güçlü yönler** (iç · olumlu) | ⚠️ **Zayıf yönler** (iç · olumsuz) |
+| 💪 **Güçlü yönler** | ⚠️ **Zayıf yönler** |
 | --- | --- |
-| • **Ayrı emniyet zinciri:** 2 × SICK nanoScan3 (360°) ve emniyet kontrolcüsü robot bilgisayarından ayrı çalışır<br>• **Hazır emniyet fonksiyonları:** insan algılama, acil durdurma, aşırı hız önleme<br>• **Açık dokümantasyon:** teknik özellik sayfası, kılavuz ve CISA danışma notu herkese açık<br>• **Uyumluluk beyanı:** CE, EN 1525, ANSI B56.5, ANSI R15.08<br>• **Yama mevcut:** yazılım 2.10.2.1 ve sonrası | • **Varsayılan parolalar** kılavuzda yazılı (CVE-2020-10269, CVE-2020-10270)<br>• **Kimlik doğrulamasız ROS arayüzü** (CVE-2020-10271, CVE-2020-10272)<br>• **Emniyet kontrolcüsü parolası** Haziran 2020 öncesi robotlarda varsayılan (CVE-2020-10276)<br>• **Fiziksel erişim:** USB'den açılış açık, BIOS parolası yok (CVE-2020-10277, CVE-2020-10278)<br>• **Web arayüzü** aşırı yükle yanıtsız kalabilir (CVE-2020-10280)<br>• Bu çalışmanın analizine göre emniyet ayarlarına ağ üzerinden ulaşılabiliyor |
-| 🚀 **Fırsatlar** (dış · olumlu) | 🛑 **Tehditler** (dış · olumsuz) |
-| • **Güncelleme ve sertleştirme:** yazılımı en az 2.10.2.1'e yükseltmek, varsayılan parolaları değiştirmek<br>• **Erişim güvenliği:** jump server, VPN, MFA, kişisel hesap, oturum kaydı (R-01: 27 → 6)<br>• **Emniyet bağımsızlığı:** ayarları ağdan ayırmak R-01'i 6'dan 2'ye düşürür<br>• **Mevzuat takvimi:** CRA bildirimi 11 Eylül 2026'dan beri, Makine Tüzüğü 20 Ocak 2027'de<br>• **SBOM ve CVE takibi** ile yama kararlarını kayıt altına almak | • **Fırsatçı dış saldırgan:** parolalar kılavuzda, Wi-Fi sürekli yayında (R-01)<br>• **Meraklı içeriden:** paylaşılan hesapla susturma bölgesi eklenebilir (R-02)<br>• **Tedarik zinciri:** servis ya da güncelleme yoluyla hatalı harita/yazılım (R-03)<br>• **Güncellenmemiş filo:** 2.10.2.1 öncesi robotlarda açıklar sürer<br>• **Hukuki sonuç:** CRA cezası en fazla 15 M€ ya da cironun %2,5'i<br>• **Fiziksel sonuç:** 350 kg'a kadar hareketli kütle, ağır yaralanma riski (S3) |
+| • Ayrı emniyet zinciri (lazer tarayıcı + emniyet kontrolcüsü)<br>• Hazır emniyet fonksiyonları<br>• Açık dokümantasyon<br>• Yama sürümü belli (2.10.2.1) | • Varsayılan parola açıkları<br>• Kimlik doğrulamasız ROS arayüzü<br>• USB boot açık, BIOS parolası yok<br>• Emniyet ayarlarına ağdan ulaşılabilmesi |
+| 🚀 **Fırsatlar** | 🛑 **Tehditler** |
+| • Yazılım güncellemesi<br>• Jump server + VPN + MFA<br>• Emniyet ayarlarını ağdan ayırmak<br>• CRA ve Makine Tüzüğü takvimi | • Fırsatçı dış saldırgan<br>• Meraklı içeriden<br>• Tedarik zinciri<br>• Hukuki ve fiziksel sonuç (S3) |
 
-**Sonuç:** MiR250'nin emniyet donanımı güçlü; asıl risk **varsayılan parolalar ve ağ üzerinden değişebilen emniyet ayarlarıdır**. En hızlı kazanç yazılım güncellemesi ve parola değişikliği, kalıcı çözüm emniyet ayarlarını ağdan bağımsız tutmaktır.
+Ayrıntı: [analizler/SWOT_Analizi.md](analizler/SWOT_Analizi.md)
 
 ---
 
-## 📚 Kaynaklar
+## Çalışma ilkeleri
 
-- [CISA ICSA-21-280-02: Mobile Industrial Robots Vehicles and MiR Fleet Software](https://www.cisa.gov/ics/advisories/icsa-21-280-02)
-- [MiR250 Specifications (2023-06-28)](https://www.hartfiel.com/wp-content/uploads/2024/04/MiR250-Specs.pdf)
-- [MiR250 ürün dokümanları](https://mobile-industrial-robots.com/product-documents/mir250-hw-20-sw-2-v1)
-- [CVE-2020-10269](https://db.gcve.eu/vuln/CVE-2020-10269) · [CVE-2020-10270](https://vulnerability.circl.lu/vuln/CVE-2020-10270)
-- INSPECCO × Kriptarium, Safety 4.0 Readiness Bootcamp föyleri ve sunumları
+1. Doğrulanmış bilgi, bilinmeyenler ve akademik öneriler birbirinden ayrı tutulur.
+2. Her kaynağın doğrulama durumu yazılır; okunmayan kaynak okunmuş gibi sunulmaz.
+3. Senaryolar fiziksel sonuçla biter; "veri çalındı" ile biten kayıt emniyet bulgusu sayılmaz.
+4. Fiziksel sistemlerde yetkisiz tarama, erişim veya yapılandırma değişikliği yapılmaz.
+5. Bu depo resmî uygunluk belgesinin yerine geçmez.
+
+## Haftalık güncelleme yöntemi
+
+- Yeni laboratuvar, `docs/sisleme/` ve `docs/paketleme/` klasörlerine sıradaki numarayla ayrı PDF olarak eklenir.
+- Önceki teslimlerin içeriği değiştirilmez; düzeltmeler yeni commit'te nedeniyle yazılır.
+- Commit mesajı biçimi: `docs: LAB 5 föyü eklendi (gg.aa.yyyy)`.
+
+## Durum
+
+| Bölüm | Depo durumu |
+| --- | --- |
+| LAB 1 · Safety Architecture | Tamamlandı |
+| LAB 2 · IEC 62443 Mini Workshop | Tamamlandı |
+| LAB 3 · Threat & Risk | Tamamlandı |
+| LAB 4 · Secure Remote Access | Tamamlandı |
+| LAB 5 · SBOM / CVE / Patch | Henüz eklenmedi |
+| LAB 6 · CRA Incident Simulation | Henüz eklenmedi |
+| LAB 7 · AI Safety Challenge | Henüz eklenmedi |
+
+## Planlanan devam
+
+Kaynak envanteri → SBOM ve CVE kararları (LAB 5) → olay müdahale akışı (LAB 6) → yapay zekâ başarısızlık kararı (LAB 7) → akademik CE teknik dosya taslağı.
 
 ---
 
