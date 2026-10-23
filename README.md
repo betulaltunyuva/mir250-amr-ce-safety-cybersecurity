@@ -33,10 +33,30 @@ MiR250 seçildi çünkü **teknik dokümanı herkese açık** ve **bilinen açı
 
 ## 📂 Depo içeriği
 
+```
+lab-mir250/
+├── foyler/
+│   ├── sisleme/      Lab1 · Lab2 · Lab3 · Lab4
+│   └── paketleme/    Lab1 · Lab2 · Lab3 · Lab4
+├── rapor/            ayrıntılı rapor
+└── swot/             SWOT analizi
+```
+
+### Föyler
+
+Her föy MiR250'ye göre doldurulmuş ve laboratuvar başına ayrı PDF'tir. Yeni laboratuvarlar geldikçe aynı klasörlere eklenecek.
+
+| Laboratuvar | Şişeleme föyü | Paketleme (PaketPro 3000) föyü |
+| --- | --- | --- |
+| **LAB 1** · Safety Architecture | [PDF](foyler/sisleme/Lab1_Sisleme_MiR250_BetulAltunyuva.pdf) | [PDF](foyler/paketleme/Lab1_Paketleme_MiR250_BetulAltunyuva.pdf) |
+| **LAB 2** · IEC 62443 Mini Workshop | [PDF](foyler/sisleme/Lab2_Sisleme_MiR250_BetulAltunyuva.pdf) | [PDF](foyler/paketleme/Lab2_Paketleme_MiR250_BetulAltunyuva.pdf) |
+| **LAB 3** · Threat & Risk + Risk Matrix | [PDF](foyler/sisleme/Lab3_Sisleme_MiR250_BetulAltunyuva.pdf) | [PDF](foyler/paketleme/Lab3_Paketleme_MiR250_BetulAltunyuva.pdf) |
+| **LAB 4** · Secure Remote Access | [PDF](foyler/sisleme/Lab4_Sisleme_MiR250_BetulAltunyuva.pdf) | [PDF](foyler/paketleme/Lab4_Paketleme_MiR250_BetulAltunyuva.pdf) |
+
+### Diğer belgeler
+
 | Klasör | Dosya | Açıklama |
 | --- | --- | --- |
-| [`foyler/`](foyler) | [Şişeleme föyü (PDF)](foyler/Lab1-4_Sisleme_MiR250_BetulAltunyuva.pdf) | LAB 1–4, MiR250'ye göre doldurulmuş |
-| [`foyler/`](foyler) | [Paketleme föyü (PDF)](foyler/Lab1-4_Paketleme_MiR250_BetulAltunyuva.pdf) | PaketPro 3000 föyü, LAB 1–4, MiR250'ye göre doldurulmuş |
 | [`rapor/`](rapor) | [Ayrıntılı rapor (PDF)](rapor/MiR250_Safety40_Lab_Raporu_LAB1-4.pdf) | Makine tanımı, bileşen listesi ve LAB 1–4 |
 | [`swot/`](swot) | [SWOT analizi (PDF)](swot/SWOT_Analizi_MiR250_BetulAltunyuva.pdf) | Aşağıda özeti de var |
 
