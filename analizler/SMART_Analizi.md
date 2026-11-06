@@ -20,14 +20,14 @@ MiR250 otonom mobil robotu için, kamuya açık üretici ve CISA dokümanlarına
 
 ## İş paketleri ve başarı ölçütleri
 
-| Paket | Önerilen zaman | Ölçülebilir çıktı | Başarı ölçütü |
-| --- | --- | --- | --- |
-| **H1** Makine tanımı ve kaynak envanteri | Hafta 1 | Teknik özellik tablosu, bileşen listesi, `kaynaklar/Kaynaklar.md` | Her kaynakta doğrulama durumu yazılı |
-| **H2** LAB 1–2 | Hafta 1–2 | Safety Function Map, envanter, Zone/Conduit | Safety PLC için ayrı bölge gerekçelendirilmiş |
-| **H3** LAB 3–4 | Hafta 3–4 | Risk Register, güvenli uzak erişim mimarisi | En az 3 senaryo, S3 bayrağı, her puana gerekçe |
-| **H4** LAB 5 | Hafta 5 | SBOM ve CVE karar kaydı | Her CVE için "uygulanabilirlik" ve "gerekli kanıt" alanı dolu |
-| **H5** LAB 6–7 | Hafta 6–7 | Olay müdahale akışı, yapay zekâ başarısızlık kararı | 24 saat / 72 saat / 14 gün çizelgesi ve güvenli davranış tablosu |
-| **H6** Teknik dosya taslağı | Hafta 8 | `PROJE_KAPSAMI.md`'deki 10 bölümün doldurulması | Üç veri sınıfı (doğrulanmış / bilinmeyen / öneri) ayrı gösterilmiş |
+| Paket | Önerilen zaman | Ölçülebilir çıktı | Başarı ölçütü | Durum (06.11.2026) |
+| --- | --- | --- | --- | --- |
+| **H1** Makine tanımı ve kaynak envanteri | Hafta 1 | Teknik özellik tablosu, bileşen listesi, `kaynaklar/Kaynaklar.md` | Her kaynakta doğrulama durumu yazılı | Tamamlandı |
+| **H2** LAB 1–2 | Hafta 1–2 | Safety Function Map, envanter, Zone/Conduit | Safety PLC için ayrı bölge gerekçelendirilmiş | Tamamlandı |
+| **H3** LAB 3–4 | Hafta 3–4 | Risk Register, güvenli uzak erişim mimarisi | En az 3 senaryo, S3 bayrağı, her puana gerekçe | Tamamlandı |
+| **H4** LAB 5 | Hafta 5 | SBOM ve CVE karar kaydı | Her CVE için "uygulanabilirlik" ve "gerekli kanıt" alanı dolu | Tamamlandı |
+| **H5** LAB 6–7 | Hafta 6–7 | Olay müdahale akışı, yapay zekâ başarısızlık kararı | 24 saat / 72 saat / 14 gün çizelgesi ve güvenli davranış tablosu | Tamamlandı |
+| **H6** Teknik dosya taslağı | Hafta 8 | `PROJE_KAPSAMI.md`'deki 10 bölümün doldurulması | Üç veri sınıfı (doğrulanmış / bilinmeyen / öneri) ayrı gösterilmiş | Bekliyor |
 
 ## İzleme göstergeleri
 

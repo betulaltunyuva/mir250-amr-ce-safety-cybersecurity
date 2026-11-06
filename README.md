@@ -9,7 +9,7 @@
 ![Mevzuat](https://img.shields.io/badge/Mevzuat-CRA_%2B_Makine_Tüzüğü-1b2f48?style=for-the-badge)
 ![İlerleme](https://img.shields.io/badge/İlerleme-7%2F7_lab-0f7c78?style=for-the-badge)
 
-**[📌 Amaç](#-projenin-amacı) · [📂 İçerik](#-depo-içeriği) · [🤖 Makine](#-seçilen-makine) · [🧪 Laboratuvarlar](#-laboratuvar-özeti) · [🧭 SWOT](#-swot-özeti) · [📈 Durum](#-durum)**
+**[📌 Amaç](#-projenin-amacı) · [📂 İçerik](#-depo-içeriği) · [🤖 Makine](#-seçilen-makine) · [🧪 Laboratuvarlar](#-laboratuvar-özeti) · [🧭 SWOT · SMART](#-swot-ve-smart-özeti) · [📈 Durum](#-durum)**
 
 </div>
 
@@ -54,7 +54,7 @@ Bu çalışma, **Mobile Industrial Robots (MiR) / MiR250 Otonom Mobil Robot (AMR
 | 📄 | [docs/paketleme/](docs/paketleme) | Paketleme (PaketPro 3000) föyü: LAB 1–7, MiR250'ye göre doldurulmuş, her lab ayrı PDF |
 | 📘 | [Ayrıntılı rapor](docs/rapor/MiR250_Safety40_Lab_Raporu_LAB1-4.pdf) | Makine tanımı, bileşen listesi ve LAB 1–4 |
 | 🧭 | [SWOT analizi](analizler/SWOT_Analizi.md) | [PDF sürümü](analizler/SWOT_Analizi_MiR250_BetulAltunyuva.pdf) de var |
-| 🎯 | [SMART analizi](analizler/SMART_Analizi.md) | Hedef, iş paketleri, izleme göstergeleri |
+| 🎯 | [SMART analizi](analizler/SMART_Analizi.md) | Hedef, iş paketleri, izleme göstergeleri; [PDF sürümü](analizler/SMART_Analizi_MiR250_BetulAltunyuva.pdf) de var |
 | 📚 | [Kaynaklar](kaynaklar/Kaynaklar.md) | Kaynaklar, doğrulama durumları, CVE değerlendirme kaydı |
 | 🗺️ | [PROJE_KAPSAMI.md](PROJE_KAPSAMI.md) | Kapsam, veri sınıflandırması, teknik dosya taslağı bölümleri |
 | 📈 | [HAFTALIK_ILERLEME.md](HAFTALIK_ILERLEME.md) | Haftalık ilerleme ve güncelleme kuralı |
@@ -178,7 +178,9 @@ Emniyet kontrolcüsü ayrı ve en kritik bölgeye (**Z4**) konur; robot bilgisay
 
 ---
 
-## 🧭 SWOT özeti
+## 🧭 SWOT ve SMART özeti
+
+### 💪 SWOT
 
 | 💪 **Güçlü yönler** | ⚠️ **Zayıf yönler** |
 | --- | --- |
@@ -186,7 +188,30 @@ Emniyet kontrolcüsü ayrı ve en kritik bölgeye (**Z4**) konur; robot bilgisay
 | 🚀 **Fırsatlar** | 🛑 **Tehditler** |
 | • Yazılım güncellemesi<br>• Jump server + VPN + MFA<br>• Emniyet ayarlarını ağdan ayırmak<br>• CRA ve Makine Tüzüğü takvimi | • Fırsatçı dış saldırgan<br>• Meraklı içeriden<br>• Tedarik zinciri<br>• Hukuki ve fiziksel sonuç (S3) |
 
-📎 Ayrıntı: [analizler/SWOT_Analizi.md](analizler/SWOT_Analizi.md) · [SMART analizi](analizler/SMART_Analizi.md)
+📎 Ayrıntı: [SWOT analizi](analizler/SWOT_Analizi.md) · [SWOT PDF](analizler/SWOT_Analizi_MiR250_BetulAltunyuva.pdf)
+
+### 🎯 SMART
+
+**Ana hedef:** LAB 1–7 çıktılarını ve bunları birleştiren akademik bir CE teknik dosya taslağını, kamuya açık dokümanlara dayanarak ve ders takvimiyle uyumlu biçimde tamamlamak.
+
+| | Kriter | Bu projede |
+| :-: | --- | --- |
+| **S** | Belirli | Tek makine (MiR250), tek konu (siber güvenlik ve emniyet), tanımlı çıktılar |
+| **M** | Ölçülebilir | Tamamlanan lab sayısı, Risk Register senaryoları ve S3 bayrakları, kaynak etiketleri |
+| **A** | Ulaşılabilir | Fiziksel test gerekmez; yalnızca kamuya açık dokümanlar |
+| **R** | İlgili | CRA ve Makine Tüzüğü (AB) 2023/1230 kapsamında teknik dosya hazırlığı |
+| **T** | Zamanlı | Her lab ilgili haftada; teknik dosya taslağı LAB 7'den sonra |
+
+| İş paketi | Zaman | Durum |
+| --- | --- | :-: |
+| H1 · Makine tanımı ve kaynak envanteri | Hafta 1 | ✅ |
+| H2 · LAB 1–2 | Hafta 1–2 | ✅ |
+| H3 · LAB 3–4 | Hafta 3–4 | ✅ |
+| H4 · LAB 5 | Hafta 5 | ✅ |
+| H5 · LAB 6–7 | Hafta 6–7 | ✅ |
+| H6 · Akademik CE teknik dosya taslağı | Hafta 8 | ⏳ |
+
+📎 Ayrıntı: [SMART analizi](analizler/SMART_Analizi.md) · [SMART PDF](analizler/SMART_Analizi_MiR250_BetulAltunyuva.pdf)
 
 ---
 
