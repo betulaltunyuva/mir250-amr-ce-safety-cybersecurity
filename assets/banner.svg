@@ -28,7 +28,7 @@
   <!-- chips -->
   <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700">
     <rect x="60" y="252" width="168" height="32" rx="16" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-opacity="0.5"/>
-    <text x="144" y="273" text-anchor="middle" fill="#ffffff">LAB 1–4 tamamlandı</text>
+    <text x="144" y="273" text-anchor="middle" fill="#ffffff">LAB 1–7 tamamlandı</text>
     <rect x="240" y="252" width="116" height="32" rx="16" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-opacity="0.5"/>
     <text x="298" y="273" text-anchor="middle" fill="#ffffff">IEC 62443</text>
     <rect x="368" y="252" width="196" height="32" rx="16" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-opacity="0.5"/>

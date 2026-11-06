@@ -1,6 +1,6 @@
 # Kaynaklar ve Doğrulama Durumu
 
-**Derleme tarihi:** 23.10.2026
+**Derleme tarihi:** 06.11.2026
 
 | Kaynak | Kapsam | Durum |
 | --- | --- | --- |
@@ -20,6 +20,15 @@
 - **CVSS v3:** 8,8 (CISA ICSA-21-280-02 tablosu).
 - **Uygulanabilirlik:** **Bilinmiyor.** Robotun üretim tarihi ve yazılım sürümü bu çalışmada elde yok.
 - **Gerekli kanıt:** Seri numarası ve sevk tarihi, yazılım sürümü, emniyet kontrolcüsü parolasının değiştirilip değiştirilmediğine dair kayıt.
+
+## CVE değerlendirme kaydı: CVE-2020-10271
+
+- **Tanım:** ROS API'leri hem kablolu hem kablosuz arayüzden erişilebilir; robotun ele geçirilmesine, hizmet reddine ve veri sızdırmaya yol açabilir.
+- **Etkilenen ürün / sürüm:** MiR100/200/250/500/1000 robot yazılımı, 2.10.2.1 öncesi (CISA ICSA-21-280-02).
+- **CVSS v3:** 9,8 (CISA).
+- **Uygulanabilirlik:** **Koşullu.** Yazılım sürümü bilinmiyor; 2.10.2.1'den eskiyse etkilenir. Erişim için robotun ağına veya Wi-Fi'ına ulaşmak gerekir.
+- **Gerekli kanıt:** Yazılım sürümü, ROS portlarının hangi ağlardan erişilebildiği, güncelleme kaydı.
+- **Karar (LAB 5):** Sürüm doğrulanana kadar etkilenmiş kabul edilir; telafi edici önlemler aynı gün uygulanır, yama önce test edilir.
 
 ## Diğer CISA kayıtları (özet)
 

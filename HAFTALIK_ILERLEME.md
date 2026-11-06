@@ -9,11 +9,11 @@
 | Ayrıntılı rapor (LAB 1–4) | Tamamlandı | [PDF](docs/rapor/MiR250_Safety40_Lab_Raporu_LAB1-4.pdf) |
 | SWOT analizi | Tamamlandı | [analizler/SWOT_Analizi.md](analizler/SWOT_Analizi.md) |
 | SMART analizi | Tamamlandı | [analizler/SMART_Analizi.md](analizler/SMART_Analizi.md) |
-| LAB 5 · SBOM / CVE / Patch | Bekliyor | İlgili hafta işlendiğinde eklenecek |
-| LAB 6 · CRA Incident Simulation | Bekliyor | İlgili hafta işlendiğinde eklenecek |
-| LAB 7 · AI Safety Challenge | Bekliyor | İlgili hafta işlendiğinde eklenecek |
+| LAB 5 · SBOM / CVE / Patch | Tamamlandı | [Şişeleme](docs/sisleme/Lab5_Sisleme_MiR250_BetulAltunyuva.pdf) · [Paketleme](docs/paketleme/Lab5_Paketleme_MiR250_BetulAltunyuva.pdf) |
+| LAB 6 · CRA Incident Simulation | Tamamlandı | [Şişeleme](docs/sisleme/Lab6_Sisleme_MiR250_BetulAltunyuva.pdf) · [Paketleme](docs/paketleme/Lab6_Paketleme_MiR250_BetulAltunyuva.pdf) |
+| LAB 7 · AI Safety Challenge | Tamamlandı | [Şişeleme](docs/sisleme/Lab7_Sisleme_MiR250_BetulAltunyuva.pdf) · [Paketleme](docs/paketleme/Lab7_Paketleme_MiR250_BetulAltunyuva.pdf) |
 
-Son güncelleme: 23.10.2026
+Son güncelleme: 06.11.2026
 
 ---
 

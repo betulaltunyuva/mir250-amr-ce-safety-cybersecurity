@@ -7,7 +7,7 @@
 ![Makine](https://img.shields.io/badge/Makine-MiR250_AMR-1a9e96?style=for-the-badge)
 ![Standart](https://img.shields.io/badge/Standart-IEC_62443-e3582f?style=for-the-badge)
 ![Mevzuat](https://img.shields.io/badge/Mevzuat-CRA_%2B_Makine_Tüzüğü-1b2f48?style=for-the-badge)
-![İlerleme](https://img.shields.io/badge/İlerleme-4%2F7_lab-0f7c78?style=for-the-badge)
+![İlerleme](https://img.shields.io/badge/İlerleme-7%2F7_lab-0f7c78?style=for-the-badge)
 
 **[📌 Amaç](#-projenin-amacı) · [📂 İçerik](#-depo-içeriği) · [🤖 Makine](#-seçilen-makine) · [🧪 Laboratuvarlar](#-laboratuvar-özeti) · [🧭 SWOT](#-swot-özeti) · [📈 Durum](#-durum)**
 
@@ -17,7 +17,7 @@
 
 | Ders | Hazırlayan | Grup | Güncelleme |
 | :-: | :-: | :-: | :-: |
-| Yazılım Mühendisliği Güncel Konular | **Betül Altunyuva** | Gece-B | 23.10.2026 |
+| Yazılım Mühendisliği Güncel Konular | **Betül Altunyuva** | Gece-B | 06.11.2026 |
 
 ---
 
@@ -38,8 +38,8 @@ Bu çalışma, **Mobile Industrial Robots (MiR) / MiR250 Otonom Mobil Robot (AMR
 
 ```
 ├── docs/
-│   ├── sisleme/      Lab1 · Lab2 · Lab3 · Lab4
-│   ├── paketleme/    Lab1 · Lab2 · Lab3 · Lab4
+│   ├── sisleme/      Lab1 … Lab7
+│   ├── paketleme/    Lab1 … Lab7
 │   └── rapor/        ayrıntılı rapor
 ├── analizler/        SWOT ve SMART analizleri
 ├── kaynaklar/        kaynak listesi ve CVE kaydı
@@ -50,8 +50,8 @@ Bu çalışma, **Mobile Industrial Robots (MiR) / MiR250 Otonom Mobil Robot (AMR
 
 | | Dosya | Açıklama |
 | :-: | --- | --- |
-| 📄 | [docs/sisleme/](docs/sisleme) | Şişeleme föyü: LAB 1–4, MiR250'ye göre doldurulmuş, her lab ayrı PDF |
-| 📄 | [docs/paketleme/](docs/paketleme) | Paketleme (PaketPro 3000) föyü: LAB 1–4, MiR250'ye göre doldurulmuş, her lab ayrı PDF |
+| 📄 | [docs/sisleme/](docs/sisleme) | Şişeleme föyü: LAB 1–7, MiR250'ye göre doldurulmuş, her lab ayrı PDF |
+| 📄 | [docs/paketleme/](docs/paketleme) | Paketleme (PaketPro 3000) föyü: LAB 1–7, MiR250'ye göre doldurulmuş, her lab ayrı PDF |
 | 📘 | [Ayrıntılı rapor](docs/rapor/MiR250_Safety40_Lab_Raporu_LAB1-4.pdf) | Makine tanımı, bileşen listesi ve LAB 1–4 |
 | 🧭 | [SWOT analizi](analizler/SWOT_Analizi.md) | [PDF sürümü](analizler/SWOT_Analizi_MiR250_BetulAltunyuva.pdf) de var |
 | 🎯 | [SMART analizi](analizler/SMART_Analizi.md) | Hedef, iş paketleri, izleme göstergeleri |
@@ -107,6 +107,9 @@ CISA ICSA-21-280-02, MiR250'yi de kapsayan bir dizi açık listeler (yazılım 2
 | **LAB 2** | IEC 62443 Mini Workshop | Zone / Conduit Diagram | EP 05 |
 | **LAB 3** | Threat & Risk + Risk Matrix | Risk Register | EP 04 |
 | **LAB 4** | Secure Remote Access | Secure Architecture | EP 02 · EP 06 |
+| **LAB 5** | SBOM / CVE / Patch | Vulnerability Decision | EP 09 · 10 · 11 |
+| **LAB 6** | CRA Incident Simulation | Incident Workflow | EP 13 |
+| **LAB 7** | AI Safety Challenge | AI Fail-Safe Decision | EP 03 · EP 15 |
 
 ### 🗺️ Zone / Conduit
 
@@ -143,6 +146,36 @@ Emniyet kontrolcüsü ayrı ve en kritik bölgeye (**Z4**) konur; robot bilgisay
 
 > Erişim önlemleri **L ve E**'yi düşürür; **S**'yi yalnızca emniyet tasarımı düşürür.
 
+### 📦 LAB 5 · Zafiyet kararı
+
+| | |
+| --- | --- |
+| **Kayıt** | CVE-2020-10271 (ROS arayüzü, CVSS 9,8), yazılım 2.10.2.1 öncesi |
+| **Etkilenir mi?** | Sürüm bilinmiyor; doğrulanana kadar etkilenmiş kabul edilir |
+| **Üretim durur mu?** | Robot ayrı ve filtreli ağdaysa durmaz, aynı gün telafi önlemi alınır; ağ açıksa robotlar güvenli duruma alınır |
+| **Yama** | Önce test (tek robot, bakım penceresi); sonra insan algılama, acil durdurma ve aşırı hız testleri tekrarlanır |
+| **Telafi edici önlem** | Ayrı ağ, robotun kendi erişim noktasını kapatma, ROS portlarını engelleme, jump server + VPN + MFA |
+
+### 🚨 LAB 6 · Olay müdahale akışı
+
+| Zaman | Ne yapılır |
+| --- | --- |
+| **İlk 15 dk** | Emniyet sorumlusu, OT/IT ve üretici aranır; robotlar kontrollü durdurulur; **reset yok**, kanıt korunur; erişim kesilir |
+| **İlk 2 saat** | Koruma alanı, hız ve susturma ayarları onaylı yapılandırmayla karşılaştırılır; insan algılama ve acil durdurma test edilir; hesaplar kapatılır |
+| **24 saat** | CRA erken uyarı için ürün ve sürüm, fark edilme zamanı, kötü niyet şüphesi hazır tutulur |
+| **72 saat** | Kök neden, etki ve önlem bildirilir |
+| **14 gün** | Son rapor: korunmuş loglar ve kapanış kanıtı |
+
+### 🧠 LAB 7 · Yapay zekâ başarısızlıkları
+
+> MiR250'nin okunan üretici belgelerinde YZ modeli yoktur. Bu föy için kameraya YZ tabanlı insan/engel sınıflandırması **eklendiği varsayılmıştır**; emniyet fonksiyonu yine lazer tarayıcı + emniyet kontrolcüsü zincirindedir.
+
+| Başarısızlık | Güvenli davranış | Kavram |
+| --- | --- | --- |
+| Model yanlış sınıflandırdı | Lazer tarayıcı ve emniyet kontrolcüsü YZ'den bağımsız durdurur; kritik kararlarda onay | human override |
+| Girdi manipüle edildi | Kamera–lazer çapraz doğrulama; şüpheli girdi reddedilir, güvenli varsayıma geçilir | monitoring · fail-safe |
+| Güven düştü | Eşik altında (öneri: 0,80) yavaşla → dur → operatöre sor; YZ'siz navigasyona dön | confidence threshold · fallback |
+
 ---
 
 ## 🧭 SWOT özeti
@@ -175,7 +208,7 @@ Emniyet kontrolcüsü ayrı ve en kritik bölgeye (**Z4**) konur; robot bilgisay
 
 ## 📈 Durum
 
-✅ LAB 1 &nbsp;→&nbsp; ✅ LAB 2 &nbsp;→&nbsp; ✅ LAB 3 &nbsp;→&nbsp; ✅ LAB 4 &nbsp;→&nbsp; ⬜ LAB 5 &nbsp;→&nbsp; ⬜ LAB 6 &nbsp;→&nbsp; ⬜ LAB 7
+✅ LAB 1 &nbsp;→&nbsp; ✅ LAB 2 &nbsp;→&nbsp; ✅ LAB 3 &nbsp;→&nbsp; ✅ LAB 4 &nbsp;→&nbsp; ✅ LAB 5 &nbsp;→&nbsp; ✅ LAB 6 &nbsp;→&nbsp; ✅ LAB 7
 
 | Bölüm | Depo durumu |
 | --- | :-: |
@@ -183,11 +216,11 @@ Emniyet kontrolcüsü ayrı ve en kritik bölgeye (**Z4**) konur; robot bilgisay
 | LAB 2 · IEC 62443 Mini Workshop | ✅ Tamamlandı |
 | LAB 3 · Threat & Risk | ✅ Tamamlandı |
 | LAB 4 · Secure Remote Access | ✅ Tamamlandı |
-| LAB 5 · SBOM / CVE / Patch | ⬜ Henüz eklenmedi |
-| LAB 6 · CRA Incident Simulation | ⬜ Henüz eklenmedi |
-| LAB 7 · AI Safety Challenge | ⬜ Henüz eklenmedi |
+| LAB 5 · SBOM / CVE / Patch | ✅ Tamamlandı |
+| LAB 6 · CRA Incident Simulation | ✅ Tamamlandı |
+| LAB 7 · AI Safety Challenge | ✅ Tamamlandı |
 
-**Planlanan devam:** kaynak envanteri → SBOM ve CVE kararları (LAB 5) → olay müdahale akışı (LAB 6) → yapay zekâ başarısızlık kararı (LAB 7) → akademik CE teknik dosya taslağı.
+**Planlanan devam:** LAB 1–7 çıktılarını birleştiren akademik CE teknik dosya taslağı ([PROJE_KAPSAMI.md](PROJE_KAPSAMI.md)'deki 10 bölüm).
 
 ---
 

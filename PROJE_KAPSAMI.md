@@ -39,6 +39,6 @@ Bu depo **resmî bir CE uygunluk dosyasının yerine geçmez**. Gerçek bir uygu
 
 ## Laboratuvar föyleriyle ilişki
 
-- `docs/` altındaki PDF'ler laboratuvar föyleridir. Şu an **LAB 1–4** vardır; sonraki laboratuvarlar her hafta aynı klasörlere eklenecektir.
+- `docs/` altındaki PDF'ler laboratuvar föyleridir. Şu an **LAB 1–7** vardır; yeni laboratuvarlar çıkarsa aynı klasörlere eklenir.
 - Föyler **şişeleme** ve **paketleme** sürümleri olarak ayrı tutulur; her laboratuvar ayrı PDF'tir.
 - Föyler ve CE teknik dosya taslağı **ayrı çıktılardır**: föyler dersin haftalık görevidir, teknik dosya taslağı ise bu görevlerin bulgularını birleştiren son çalışmadır.

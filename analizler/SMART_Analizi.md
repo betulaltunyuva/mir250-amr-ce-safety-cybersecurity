@@ -1,7 +1,7 @@
 # SMART Analizi: MiR250 CE ve Siber Güvenlik Projesi
 
 **Hazırlayan:** Betül Altunyuva · Gece-B
-**Güncelleme tarihi:** 23.10.2026
+**Güncelleme tarihi:** 06.11.2026
 **Planlama ufku:** LAB 1'den akademik CE teknik dosya taslağına kadar, haftada bir laboratuvar
 
 ## Ana SMART hedef
@@ -31,9 +31,9 @@ MiR250 otonom mobil robotu için, kamuya açık üretici ve CISA dokümanlarına
 
 ## İzleme göstergeleri
 
-| Gösterge | Hedef | Durum (23.10.2026) |
+| Gösterge | Hedef | Durum (06.11.2026) |
 | --- | --- | --- |
-| Tamamlanan laboratuvar | 7 | 4 |
+| Tamamlanan laboratuvar | 7 | 7 |
 | Risk Register senaryosu | En az 3 | 3 föyde, 5 raporda |
 | S3 bayrağı taşıyan senaryo | Hepsi işaretli | Evet |
 | Doğrulanmayan kabul | 0 açık madde | 1 açık: PL d üretici beyanı |
